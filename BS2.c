@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 	/* The order is always "Waiting" then "child" and this 16 times, where as the child process prints its ID which is increased 
 		by one every time it gets printed on the terminal. */
 		
-	/* I think the order of the messages can be preticted. */
+	/* I think the order of the messages can be predicted. */
 	
 	/* It think it depends on the OS */
 	
