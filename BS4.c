@@ -30,3 +30,13 @@ int main(int argc, char* argv[])
 	
 	return EXIT_SUCCESS;
 }
+
+
+/*
+	Output:
+	
+	Waiting for children to execute...
+	I am the child: 12102
+	A child witd 12102 has been created!
+	
+*/
