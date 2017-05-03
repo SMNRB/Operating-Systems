@@ -8,7 +8,7 @@
 int main(int argc, char* argv[])
 {
 
-	pid_t pid;
+	pid_t pid;	// signed integer for process id
 	
 	for(int i = 1; i < 10; i++)
 	{
