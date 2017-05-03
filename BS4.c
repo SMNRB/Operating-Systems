@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
-			printf("Waiting for children to execute...\n");
+			printf("Waiting for child to execute...\n");
 			waitpid(pid, NULL, 2);
 			printf("A child witd %d has been created!\n", pid);
 	}	
