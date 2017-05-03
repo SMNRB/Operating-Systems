@@ -18,7 +18,6 @@ int main(int argc, char* argv[])
 	
 	if(pid == 0)
 	{
-		//while(1); // To check if wait(&pid) works 
 		printf("I am the child: %d\n", getpid());
 		exit(0);
 	}
