@@ -52,9 +52,7 @@ int main(void)
 			}
 			else
 			{
-				wait(NULL);
-				
-				
+				wait(NULL);		
 			}
 		}
 
