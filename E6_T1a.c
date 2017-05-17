@@ -23,10 +23,10 @@ int main(void)
 	}
 	else
 	{
-		int* data = shmat(shmId, (void*)0,0);		// attach pointer to segment
+		int* data = shmat(shmId, (void*)0,0);		// Maps a shared memory segment onto process’s address space.
 		*data = 0;					// set data to 0
 		
-		if(shmdt(data) == -1)				// detach pointer
+		if(shmdt(data) == -1)				// Detaches the given segmen
 		{
 			perror("shmdt(data) failed");
 			exit(1);
