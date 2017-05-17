@@ -11,7 +11,7 @@
 #include <unistd.h>
 #include <sys/sem.h>
 
-union senum 
+union senum                         // Declaration of union because otherwise compile Error
 {
     int val;
     struct semid_ds *buf;
@@ -25,7 +25,7 @@ int main(void)
     key_t key = 1000;
     size_t size = sizeof(int);
     
-    shmId = shmget(key, size, IPC_CREAT | 0666);
+    shmId = shmget(key, size, IPC_CREAT | 0666);            // Gets a semaphore set. The value returned is its id, for use with other calls.
     if(shmId == -1)
     {
         perror("shmget failed");
@@ -41,14 +41,14 @@ int main(void)
     }
     
     union senum arg;
-    arg.val = 1;
+    arg.val = 1;                                            // Set union member val = 1
     if(semctl(semId, 0, SETVAL, arg) == -1)
     {
         perror("semctl failed");
         exit(1);
     }
     
-    struct sembuf sb = {0, -1, 0};
+    struct sembuf sb = {0, -1, 0};                          // Defines an operation to be performed by the semop() call
     
     for(int i = 0; i < 100; i++)
     {
@@ -63,7 +63,8 @@ int main(void)
         {
             int* data = shmat(shmId, (void*)0,0);        
         
-            if(semop(semId,&sb,1) == -1)
+            if(semop(semId,&sb,1) == -1)                    // Performs a semaphore operation (i.e.   incrementing,  decrementing,  etc.)   on the selected members of a
+semaphore set
             {
                 perror("semop failed");
                 exit(1);
