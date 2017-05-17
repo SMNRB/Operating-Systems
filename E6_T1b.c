@@ -17,7 +17,7 @@ int main(void)
 	key_t key = 1000;
 	size_t size = sizeof(int);
 	
-	shmId = shmget(key, size, IPC_CREAT | 0666);
+	shmId = shmget(key, size, IPC_CREAT | 0666); 			// Allocates a shared memory segment
 	if(shmId == -1)
 	{
 		perror("shmget failed");
@@ -26,7 +26,7 @@ int main(void)
 	{
 		for(int i = 0; i < 100; i++)
 		{
-			pid[i] = fork();
+			pid[i] = fork();				// Child processes
 		
 			if(pid[i] < 0)
 			{
@@ -35,7 +35,7 @@ int main(void)
 			}	
 			else if(pid[i] == 0)
 			{
-				int* data = shmat(shmId, (void*)0,0);		
+				int* data = shmat(shmId, (void*)0,0);	// Maps a shared memory segment onto process’s address space.	
 			
 				for(int useless = 0; useless < 100; useless++)
 				{
