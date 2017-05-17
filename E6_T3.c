@@ -2,7 +2,7 @@
 
  /* 
   *  	Research and analyze the POSIX alternatives for shared memory and semaphores. Describe the differences 
-  *	 	between them and the System V mechanisms used in the previous tasks, and highlight advantages and 
+  *	between them and the System V mechanisms used in the previous tasks, and highlight advantages and 
   * 	disadvantages of both.
   */
   
