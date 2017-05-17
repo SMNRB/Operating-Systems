@@ -34,7 +34,9 @@
 	
 /*-------------------------------------------------------------------------------------------------------------------------*/
 
-	System V semaphores, when creating a semaphore object, creates an array of semaphores whereas POSIX semaphores create just one. Because of this feature, semaphore creation 	(memory footprint-wise) is costlier in System V semaphores when compared to POSIX semaphores.
+	System V semaphores, when creating a semaphore object, creates an array of semaphores whereas POSIX semaphores 
+	create just one. Because of this feature, semaphore creation (memory footprint-wise) is costlier in System V 
+	semaphores when compared to POSIX semaphores.
 	
 /*-------------------------------------------------------------------------------------------------------------------------*/
 
@@ -48,4 +50,5 @@
 	
 /*-------------------------------------------------------------------------------------------------------------------------*/
 
+	Alternative: TRON project https://en.wikipedia.org/wiki/TRON_project
 	
