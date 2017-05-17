@@ -9,13 +9,12 @@
 
 int main(void)
 {
-	int shmId;						// the id of the shared segment
-	key_t key = 1000;				// key
+	int shmId;				// id of the shared segment
+	key_t key = 1000;			// key
 	size_t size = sizeof(int);		// size of memory
 	char buf[4096];
 	
-	shmId = shmget(key, size, IPC_CREAT | 0666);	// gets segment -> Creates new segment
-													// with read, write rights
+	shmId = shmget(key, size, IPC_CREAT | 0666);		// gets segment -> Creates new segment with read, write rights
 	
 	if(shmId == -1)
 	{
@@ -25,9 +24,9 @@ int main(void)
 	else
 	{
 		int* data = shmat(shmId, (void*)0,0);		// attach pointer to segment
-		*data = 0;									// set data to 0
+		*data = 0;					// set data to 0
 		
-		if(shmdt(data) == -1)						// detach pointer
+		if(shmdt(data) == -1)				// detach pointer
 		{
 			perror("shmdt(data) failed");
 			exit(1);
