@@ -94,3 +94,5 @@ int main(int argc, char* argv[])
 	
 	return EXIT_SUCCESS;
 }
+
+// valgrind --leak-check=yes ./m 10 10 10
